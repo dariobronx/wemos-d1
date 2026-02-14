@@ -22,18 +22,20 @@
 #include <Arduino.h>
 
 // ============================================================================
-// PIN DELLO SHIELD L293D (standard Arduino, mappati automaticamente su ESP8266)
+// PIN DELLO SHIELD L293D (Wemos D1 R1/R2 - usa costanti Dx!)
 // ============================================================================
+// IMPORTANTE: Su ESP8266 bisogna usare le costanti Dx, NON numeri diretti!
+// I numeri diretti vengono interpretati come GPIO, non come pin Arduino.
 
 // Pin Shift Register 74HC595
-#define MOTOR_LATCH   4     // STCP - Storage Register Clock (Latch)
-#define MOTOR_ENABLE  7     // OE - Output Enable (attivo basso)
-#define MOTOR_DATA    8     // DS - Serial Data Input
-#define MOTOR_CLK     12    // SHCP - Shift Register Clock
+#define MOTOR_LATCH   D4    // STCP - Storage Register Clock (Latch) - GPIO2
+#define MOTOR_ENABLE  D7    // OE - Output Enable (attivo basso) - GPIO13
+#define MOTOR_DATA    D8    // DS - Serial Data Input - GPIO15
+#define MOTOR_CLK     D6    // SHCP - Shift Register Clock - GPIO12
 
 // Pin PWM per velocità motori
-#define PWM_A         11    // ENA/ENB per motori 1 e 2
-#define PWM_B         3     // ENA/ENB per motori 3 e 4
+#define PWM_A         D5    // ENA/ENB per motori 1 e 2 - GPIO14
+#define PWM_B         D3    // ENA/ENB per motori 3 e 4 - GPIO0
 
 // ============================================================================
 // COSTANTI MOTORI
